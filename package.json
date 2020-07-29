@@ -45,6 +45,5 @@
     "prettier": "^2.0.5",
     "prop-types": "^15.7.2"
   },
-  "homepage" : "https://suminpixel.github.io/facebook-redux-reply/"
-
+  "homepage": "https://suminpixel.github.io/facebook-redux-reply/"
 }
