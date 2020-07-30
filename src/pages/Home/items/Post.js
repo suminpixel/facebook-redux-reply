@@ -16,14 +16,13 @@ const Post = ({ post }) => {
   const {
     seq,
     createAt,
-    writer: { name, profileImageUrl },
+    writer: { name, profileImageUrl, id },
     contents,
     likes,
     likesOfMe,
   } = post;
   
   //comment 갯수 get
-  //TODO: action reply 까지 셈 필요
   const commentsCount = useSelector(selectors.comments.getCommentsCount(seq));
 
   //작성 날짜 표기
@@ -34,6 +33,8 @@ const Post = ({ post }) => {
     e.preventDefault();
     dispatch(actions.posts.likePost(seq));
   };
+
+  
 
   return (
     <Wrapper>

@@ -22,7 +22,7 @@ const INITIAL_STATE = {
       id: 'hong',
       name: '홍길동',
       profileImageUrl:
-        'https://lh3.googleusercontent.com/proxy/VPjiGJu2HRCdG6lsqscOeZiHORjC2oWVBPaNBajAURgPPT8cZKmuzAPLOBlDkqydxmSdgw3DumCrQXK51Qd4Vif2hcL2nTVkzWn8np68ShqB7znMbFBB9qf6imaoKO7-65Xn1NMilXzI19eWWS4kJt37oIkfz5bA2NladFMZj_u_xWAk',
+        'https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2556DA38594B51FE36',
     },
     contents: `React, Mobx, Redux 를 사용해 Facebook 댓글 구현하기 (Facebook 웹사이트 참고)`,
     createAt: '2020-07-21',
@@ -36,19 +36,7 @@ const INITIAL_IDS_STATE = [0, 1];
 
 function entities(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
-    case ActionTypes.ADD_POST:
-      return {
-        ...state,
-        [Object.keys(state).length]: {
-          id: Object.keys(state).length,
-          writer: action.user,
-          contents: action.contents,
-          createAt: Date.now(),
-          likes: 0,
-          comments: 0,
-          likesOfMe: false,
-        },
-      };
+  
     case ActionTypes.LIKE_POST: {
       const newLikedPost = { ...state[action.postId] };
       if(newLikedPost.likesOfMe ){
@@ -72,8 +60,6 @@ function ids(state = INITIAL_IDS_STATE, action = {}) {
   switch (action.type) {
     case ActionTypes.GET_POSTS:
       return [...state];
-    case ActionTypes.ADD_POST:
-      return [state.length, ...state];
     default:
       return state;
   }

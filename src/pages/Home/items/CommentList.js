@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Comment from './Comment';
 import * as selectors from '../../../data/rootSelectors';

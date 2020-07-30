@@ -49,9 +49,11 @@ const CommentForm = (props) => {
 const Wrapper = styled.div`
   input {
     width: 100%;
-    background-color: #eeeeee;
-    padding: 10px;
-    border-radius: 15px;
+    background-color: #F0F2F5;
+    padding: 12px;
+    border-radius: 18px;
+    color: black;
+    font-weight: bold;
     border: 0;
   }
 `;

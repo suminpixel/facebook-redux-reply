@@ -11,10 +11,12 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const postsState = useSelector(selectors.posts.getPosts);
+  const user = useSelector(selectors.users.getUser);
 
   //post data 로드
   useEffect(() => {
     dispatch(actions.posts.getPosts());
+    dispatch(actions.comments.getComments(user));
   }, []);
 
   //useMemo : redering 중에 실행 . 디펜던시에 넣은 값이 변화가 없는 경우, 이전에 실행했던 연산의 결과 기억했다 반환
